@@ -1,2 +1,56 @@
-# Metin2-Server-Starter
-Batch-basiertes Automatisierungsskript zur Steuerung von VirtualBox-Instanzen und SSH-Diensten für FreeBSD-Server.
+Metin2 Server Starter (Automation Script)
+💡 Motivation & Ziel
+Dieses Projekt entstand aus einem alltäglichen Problem der Systemadministration: Um einen lokalen Test-Server (FreeBSD) zu starten, mussten täglich dieselben manuellen Schritte durchgeführt werden (VM starten, warten, SSH-Login, Dienste starten).
+
+Um diesen ineffizienten Workflow zu optimieren, habe ich dieses Batch-Skript entwickelt. Es automatisiert den gesamten Prozess von der Virtualisierungsebene bis zum Start der Anwendungsdienste – ein klassisches Beispiel für Infrastructure-as-Code im kleinen Maßstab.
+
+🛠️ Eingesetzte Technologien & Skills
+Scripting: Batch / CMD
+
+Virtualisierung: VirtualBox CLI (VBoxManage.exe)
+
+Netzwerk & Sicherheit: SSH-Protokoll, Public-Key-Authentifizierung (RSA)
+
+Prozesssteuerung: Automatisierte Ausführung von Shell-Commands (FreeBSD/tcsh) auf Remote-Systemen.
+
+⚙️ Kernfunktionen
+Intelligenter VM-Start: Das Skript prüft über errorlevel-Abfragen, ob die virtuelle Maschine bereits läuft, um redundante Startversuche und Fehler zu vermeiden.
+
+Headless-Steuerung via SSH: Loggt sich eigenständig auf dem FreeBSD-System ein und initialisiert die Server-Prozesse (game; m2).
+
+Status-Feedback: Sauberes Konsolen-Feedback mit Timestamps (%time%) für leichtes Monitoring.
+
+🚀 Systemvoraussetzungen
+Oracle VirtualBox (Standardpfad vorausgesetzt).
+
+Windows 10/11 mit aktiviertem OpenSSH-Client.
+
+SSH-Schlüsselpaar (RSA) für den passwortlosen Login.
+
+🔑 Setup: SSH-Key (Login ohne Passwort)
+Damit die Automatisierung nicht durch Passwortabfragen blockiert wird, muss der Windows-Host am FreeBSD-Server authentifiziert werden:
+
+1. Key generieren (Windows PowerShell):
+
+Bash
+ssh-keygen -t rsa -b 4096
+(Alle Abfragen mit Enter bestätigen, kein Passwort vergeben).
+
+2. Public Key auf den Server übertragen:
+
+Bash
+ssh-copy-id root@192.168.178.55
+(Alternativ den Inhalt der id_rsa.pub manuell in die /root/.ssh/authorized_keys des Servers einfügen).
+
+📦 Installation & Nutzung
+Lade die Datei Server_Start.bat herunter.
+
+Öffne die Datei in einem Texteditor und passe die Variablen an deine Umgebung an:
+
+SERVER_IP (IP deines lokalen Servers)
+
+VM_NAME (Name der Maschine in VirtualBox)
+
+Führe die .bat-Datei mit einem Doppelklick aus.
+
+Entwickelt von denneonblue – Fokus auf pragmatische IT-Lösungen und Prozessautomatisierung.
