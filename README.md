@@ -1,7 +1,7 @@
-# Metin2 Server Starter (Automation Script)
+# Metin2 Server Starter
 
 ### 💡 Motivation & Ziel
-Ich habe vor ein paar Tagen einen Metin2-Server zum Üben und Testen aufgesetzt. Damit ich nicht jedes Mal VirtualBox manuell starten, dort die Logindaten und noch einige andere Befehle eingeben muss, damit der Server komplett online geht, habe ich dieses kleine Skript geschrieben. Es automatisiert den gesamten Prozess von der Virtualisierungsebene bis zum Start der Anwendungsdienste – ein klassisches Beispiel für **Infrastructure-as-Code** im kleinen Maßstab.
+Ich habe vor ein paar Tagen einen Metin2 Server zum Üben und Testen aufgesetzt. Damit ich nicht jedes Mal VirtualBox manuell starten, dort die Logindaten und noch einige andere Befehle eingeben muss, damit der Server komplett online geht, habe ich dieses kleine Skript geschrieben. Es automatisiert den gesamten Prozess von der Virtualisierungsebene bis zum Start der Anwendungsdienste – ein klassisches Beispiel für **Infrastructure-as-Code** im kleinen Maßstab.
 
 ### 🛠️ Eingesetzte Technologien & Skills
 * **Scripting:** Batch / CMD
@@ -29,23 +29,26 @@ Damit die Automatisierung nicht durch Passwortabfragen blockiert wird, muss der 
 
 ```bash
 ssh-keygen -t rsa -b 4096
-Hinweis: Bestätige alle Abfragen mit Enter und vergebe kein Passwort, damit das Skript vollautomatisch laufen kann.
+```
 
-2. Public Key auf den Server übertragen:
+**Hinweis:** Bestätige alle Abfragen mit **Enter** und vergebe kein Passwort, damit das Skript vollautomatisch laufen kann.
 
-Bash
+**2. Public Key auf den Server übertragen:**
+
+```bash
 ssh-copy-id root@192.168.178.55
-Alternativ: Kopiere den Inhalt deiner id_rsa.pub manuell in die Datei /root/.ssh/authorized_keys auf deinem Server.
+```
 
-📦 Installation & Nutzung
-Datei vorbereiten: Lade die Datei Server_Start.bat herunter.
+*Alternativ:* Kopiere den Inhalt deiner `id_rsa.pub` manuell in die Datei `/root/.ssh/authorized_keys` auf deinem Server.
 
-Konfiguration: Öffne die Datei in einem Texteditor und passe die Variablen an:
+---
 
-SERVER_IP: Die IP deines lokalen Servers.
+## 📦 Installation & Nutzung
+1. **Datei vorbereiten:** Lade die Datei `Server_Start.bat` herunter.
+2. **Konfiguration:** Öffne die Datei in einem Texteditor und passe die Variablen an:
+   * `SERVER_IP`: Die IP deines lokalen Servers.
+   * `VM_NAME`: Der Name der Maschine in VirtualBox.
+3. **Start:** Führe die `.bat`-Datei einfach mit einem Doppelklick aus.
 
-VM_NAME: Der Name der Maschine in VirtualBox.
-
-Start: Führe die .bat-Datei einfach mit einem Doppelklick aus.
-
-Entwickelt von Dennis – Fokus auf pragmatische IT-Lösungen und Prozessautomatisierung.
+---
+*Entwickelt von Dennis – Fokus auf pragmatische IT-Lösungen und Prozessautomatisierung.*
