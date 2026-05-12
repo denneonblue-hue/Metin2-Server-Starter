@@ -1,0 +1,16 @@
+# Windows Systemdateien
+Thumbs.db
+desktop.ini
+
+# SSH Sensible Daten (WICHTIG!)
+# Falls du versehentlich deine Keys in den Ordner kopierst
+id_rsa
+id_rsa.pub
+known_hosts
+
+# Backup-Dateien
+*.bak
+*.tmp
+
+# IDE-spezifische Dateien (falls du VS Code nutzt)
+.vscode/
