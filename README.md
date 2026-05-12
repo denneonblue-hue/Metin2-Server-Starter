@@ -22,28 +22,29 @@ Ich habe vor ein paar Tagen einen Metin2-Server zum Üben und Testen aufgesetzt.
 3. **SSH-Schlüsselpaar (RSA)** für den passwortlosen Login.
 
 ## 🔑 Setup: SSH-Key (Login ohne Passwort)
-Damit die Automatisierung nicht durch Passwortabfragen blockiert wird, muss der Windows-Host am FreeBSD-Server authentifiziert werden:
+Damit die Automatisierung nicht durch Passwortabfragen blockiert wird, muss der Windows-Host am FreeBSD-Server authentifiziert werden.
 
 **1. Key generieren (Windows PowerShell):**
 ```bash
 ssh-keygen -t rsa -b 4096
-(Alle Abfragen mit Enter bestätigen, kein Passwort vergeben).
+[!NOTE]
+Bestätige alle Abfragen mit Enter und vergebe kein Passwort, damit das Skript vollautomatisch laufen kann.
 
 2. Public Key auf den Server übertragen:
 
 Bash
 ssh-copy-id root@192.168.178.55
-(Alternativ den Inhalt der id_rsa.pub manuell in die /root/.ssh/authorized_keys des Servers einfügen).
+Alternativ: Kopiere den Inhalt deiner id_rsa.pub manuell in die Datei /root/.ssh/authorized_keys auf deinem Server.
 
 📦 Installation & Nutzung
-Lade die Datei Server_Start.bat herunter.
+Datei vorbereiten: Lade die Datei Server_Start.bat herunter.
 
-Öffne die Datei in einem Texteditor und passe die Variablen an deine Umgebung an:
+Konfiguration: Öffne die Datei in einem Texteditor und passe die Variablen an:
 
-SERVER_IP (IP deines lokalen Servers)
+SERVER_IP: Die IP deines lokalen Servers.
 
-VM_NAME (Name der Maschine in VirtualBox)
+VM_NAME: Der Name der Maschine in VirtualBox.
 
-Führe die .bat-Datei mit einem Doppelklick aus.
+Start: Führe die .bat-Datei einfach mit einem Doppelklick aus.
 
 Entwickelt von Dennis – Fokus auf pragmatische IT-Lösungen und Prozessautomatisierung.
