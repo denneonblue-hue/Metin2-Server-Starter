@@ -51,4 +51,4 @@ ssh-copy-id root@192.168.178.55
 3. **Start:** Führe die `.bat`-Datei einfach mit einem Doppelklick aus.
 
 ---
-*Entwickelt von Dennis – Fokus auf pragmatische IT-Lösungen und Prozessautomatisierung.*
+*Entwickelt von denneonblue – Fokus auf pragmatische IT-Lösungen und Prozessautomatisierung.*
