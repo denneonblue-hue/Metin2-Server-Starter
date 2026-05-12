@@ -25,22 +25,17 @@ Ich habe vor ein paar Tagen einen Metin2-Server zum Üben und Testen aufgesetzt.
 
 Damit die Automatisierung nicht durch Passwortabfragen blockiert wird, muss der Windows-Host am FreeBSD-Server authentifiziert werden.
 
-&nbsp;
-
 **1. Key generieren (Windows PowerShell):**
 
 ```bash
 ssh-keygen -t rsa -b 4096
-[!NOTE]
-Bestätige alle Abfragen mit Enter und vergebe kein Passwort, damit das Skript vollautomatisch laufen kann.
+Hinweis: Bestätige alle Abfragen mit Enter und vergebe kein Passwort, damit das Skript vollautomatisch laufen kann.
 
 2. Public Key auf den Server übertragen:
 
 Bash
 ssh-copy-id root@192.168.178.55
 Alternativ: Kopiere den Inhalt deiner id_rsa.pub manuell in die Datei /root/.ssh/authorized_keys auf deinem Server.
-
-.
 
 📦 Installation & Nutzung
 Datei vorbereiten: Lade die Datei Server_Start.bat herunter.
