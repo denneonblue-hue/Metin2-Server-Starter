@@ -25,6 +25,8 @@ Ich habe vor ein paar Tagen einen Metin2-Server zum Üben und Testen aufgesetzt.
 
 Damit die Automatisierung nicht durch Passwortabfragen blockiert wird, muss der Windows-Host am FreeBSD-Server authentifiziert werden.
 
+&nbsp;
+
 **1. Key generieren (Windows PowerShell):**
 
 ```bash
