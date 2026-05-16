@@ -1,4 +1,4 @@
-# Metin2 Server Starter
+# Server Starter
 
 ![Skript in Aktion](img/1.png)
 ![Skript in Aktion](img/2.png)
