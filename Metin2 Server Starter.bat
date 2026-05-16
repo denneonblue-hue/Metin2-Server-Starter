@@ -1,5 +1,5 @@
 @echo off
-title Metin2 Server Starter
+title Server Starter
 color 0b
 
 :: 1. Pfade festlegen
